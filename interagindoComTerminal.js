@@ -16,10 +16,9 @@ leitor.question('Qual é o seu nome? ', (nome) =>{
         }else{
             console.log(`O usuário ${nome} é menor de idade e não está apto a dirigir`)
         }
-
-        leitor.close()
+        leitor.close();
+        })
     })
-
-})
+    
 
 
