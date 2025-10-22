@@ -1,7 +1,10 @@
 //modo de importação no tipo module
 import{createInterface} from 'readline'
 //importando as funções criadas no outro arquivo da pasta
-import{soma, subtracao} from './operacoesMatematicas.js'
+import{soma, subtracao} from './operacoesBasicas.js'
+// importando objeto de funções - metodos
+import complexos from './operacoesComplexas.js'
+
 
 const leitor = createInterface({
     input: process.stdin,
@@ -10,7 +13,7 @@ const leitor = createInterface({
 
 leitor.question('Digite o primeiro numero\n ', (numero1) =>{
     
-    leitor.question('Digite a operação\n +: soma\n -:subtração \n>', (operacao) =>{
+    leitor.question('Digite a operação\n +: Soma\n -:Subtração \n *:Multiplicação \n /:Divisão \n>', (operacao) =>{
     
         leitor.question('Digite o segundo número:\n>', (numero2) =>{
             const num1 = Number(numero1)
@@ -21,6 +24,10 @@ leitor.question('Digite o primeiro numero\n ', (numero1) =>{
                resultado = soma (num1,num2)
             }else if(operacao == '-'){
                 resultado = subtracao (num1,num2)
+            }else if(operacao == '*'){
+                resultado = complexos.multiplicacao (num1,num2)
+            }else if(operacao == '/'){
+                resultado = complexos.divisao (num1,num2)
             }else{
                 console.log("operação inválida!")
             }
